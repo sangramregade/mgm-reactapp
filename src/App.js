@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+//components imports
+import Home from './components/pages/Home';
+import AddPatient from './components/patients/AddPatient';
+import ViewPaient from './components/patients/ViewPaient';
+import EditPaient from './components/patients/EditPaient';
+import NotFound from './components/pages/NotFound';
+import Navbar from './components/layout/Navbar';
+
+//Router
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/patients/add" element={<AddPatient />} />
+        <Route path="/patients/edit/:id" element={<EditPaient />} />
+        <Route path="/patients/:id" element={<ViewPaient />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
