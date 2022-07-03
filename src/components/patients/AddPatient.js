@@ -130,7 +130,7 @@ const AddPatient = () => {
                                                 <div className="form-group">
                                                     <div className="input-group mb-3">
                                                         <span className="input-group-text">
-                                                            <FontAwesomeIcon icon={faUser} />Home
+                                                            <FontAwesomeIcon icon={faUser} />
                                                         </span>
                                                         <input type="text" className="form-control form-control-lg"
                                                             placeholder="Enter Name"
